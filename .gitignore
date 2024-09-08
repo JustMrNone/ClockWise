@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Django specific files
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+
+# Ignore virtual environments
+venv/
+env/
+ENV/
+*.env
+
+# Node modules (for Tailwind CSS)
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+package-lock.json
+.pnp/
+.pnp.js
+
+# Django collected static files
+staticfiles/
+
+# Ignore local settings
+settings_local.py
+
+# MacOS specific files
+.DS_Store
