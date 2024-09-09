@@ -49,10 +49,6 @@ For development dependencies (e.g., testing libraries):
 
 To activate the virtual environment for running your project, use:
 
-bash
-
-Copy
-
 `pipenv shell`
 
 This will drop you into the virtual environment, and you can start running your project or scripts from here.
