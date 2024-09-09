@@ -1,0 +1,68 @@
+body {
+    background-color: white;
+}
+
+.menu-container {
+    position: relative;
+}
+
+.hamburger-icon {
+    position: absolute;
+    z-index: 1;
+    top: 5vh;
+    left: 5vw;
+    font-size: 2em;
+    color: black;
+    padding-bottom: 2vh;
+    transition: 0.0s ease-in-out;
+}
+
+.hamburger-icon i {
+    transition: transform 0.5s, color 0.5s;
+}
+
+/* Initially, the hamburger icon is displayed */
+#openmenu:not(:checked) ~ .hamburger-icon i:before {
+    content: "\f0c9"; /* Font Awesome 'bars' icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* When the menu is opened, change icon to 'xmark' */
+#openmenu:checked ~ .hamburger-icon i:before {
+    content: "\f00d"; /* Font Awesome 'xmark' icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: white; /* Change color to white when opened */
+}
+
+#openmenu:checked ~ .menu-pane {
+    left: 0; /* Adjust position when menu is open */
+    transform: translateX(0);
+}
+
+#openmenu:checked ~ .body-text {
+    display: none;
+}
+
+.menu-pane {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: -30vw; /* Adjust the starting position to hide the menu off-screen */
+    width: 30vw;
+    height: 100vh;
+    transition: transform 0.3s ease-in-out;
+    padding: 0;
+    margin: 0;
+}
+
+input.hamburger-checkbox {
+    position: absolute;
+    z-index: 3;
+    top: 5vh;
+    left: 5vw;
+    width: 0; /* Hide the checkbox */
+    height: 0; /* Hide the checkbox */
+    opacity: 0; /* Hide the checkbox */
+}

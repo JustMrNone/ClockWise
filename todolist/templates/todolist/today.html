@@ -1,3 +1,4 @@
+{% extends 'todolist/layout.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -5,13 +6,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/today/tailwindstyles.css' %}">
-    <link rel="stylesheet" href="{% static 'css' %}">
+
     <title>Today</title>
 </head>
 <body>
-    <div class="flex justify-center mt-4">
+    {% block nav%}
+
+    <div class="flex justify-center mt-4 text-xl">
         <h1>Today's Tasks</h1>
-      </div>
+    </div>
+
+    {% endblock nav %}
 </body>
 </html>

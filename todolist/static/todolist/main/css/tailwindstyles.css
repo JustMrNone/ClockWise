@@ -504,22 +504,19 @@ video {
 .static {
   position: static;
 }
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
 .mt-4 {
   margin-top: 1rem;
+}
+.block {
+  display: block;
 }
 .flex {
   display: flex;
 }
-.h-screen {
-  height: 100vh;
-}
-.items-center {
-  align-items: center;
-}
 .justify-center {
   justify-content: center;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }

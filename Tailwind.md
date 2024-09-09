@@ -184,3 +184,5 @@ This will recompile the `output.css` file every time changes are detected in t
 * * * * *
 
 That's it! Now Tailwind CSS is fully integrated with your Django project, and you can start using its utility classes in your templates.
+
+Note: To ensure proper functionality, place the Tailwind CSS file within your main styles directory and ensure it is referenced at the top of your CSS link hierarchy.
