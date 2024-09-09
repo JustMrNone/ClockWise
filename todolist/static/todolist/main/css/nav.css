@@ -1,20 +1,25 @@
 body {
     background-color: white;
+    margin: 0; /* Ensure no default margin on body */
+    padding: 0; /* Ensure no default padding on body */
+    overflow: hidden; /* Prevent scrolling when menu is open */
 }
 
 .menu-container {
     position: relative;
+    z-index: 10; /* Ensure menu container is above other elements */
 }
 
 .hamburger-icon {
-    position: absolute;
-    z-index: 1;
+    position: fixed; /* Use fixed to keep the icon in place when scrolling */
+    z-index: 11; /* Ensure it is above the menu pane */
     top: 5vh;
     left: 5vw;
     font-size: 2em;
     color: black;
     padding-bottom: 2vh;
-    transition: 0.0s ease-in-out;
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
 }
 
 .hamburger-icon i {
@@ -47,22 +52,24 @@ body {
 
 .menu-pane {
     background-color: #000;
-    position: fixed;
+    position: fixed; /* Use fixed to ensure it stays in place */
     top: 0;
-    left: -30vw; /* Adjust the starting position to hide the menu off-screen */
-    width: 30vw;
+    left: -30vw; /* Hide the menu off-screen initially */
+    width: 17vw;
     height: 100vh;
     transition: transform 0.3s ease-in-out;
     padding: 0;
     margin: 0;
+    z-index: 9; /* Ensure it's below the hamburger icon */
 }
 
 input.hamburger-checkbox {
     position: absolute;
-    z-index: 3;
+    z-index: 12; /* Ensure it is above other elements */
     top: 5vh;
     left: 5vw;
     width: 0; /* Hide the checkbox */
     height: 0; /* Hide the checkbox */
     opacity: 0; /* Hide the checkbox */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
 }

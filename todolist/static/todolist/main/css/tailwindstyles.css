@@ -504,8 +504,14 @@ video {
 .static {
   position: static;
 }
-.mt-4 {
-  margin-top: 1rem;
+.mt-6 {
+  margin-top: 1.5rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
+.mt-11 {
+  margin-top: 2.75rem;
 }
 .block {
   display: block;
