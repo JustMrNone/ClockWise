@@ -132,11 +132,12 @@ STATIC_URL = 'static/'
 
 #uncomment in production 👇
 
-"""
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),  # Add your static files folder here.
+    os.path.join(BASE_DIR, 'static'),  # Add your global static files folder here.
 ]
 
+"""
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Folder where collected static files will be stored
 
 """

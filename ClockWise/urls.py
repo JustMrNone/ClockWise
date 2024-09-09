@@ -19,9 +19,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('todolist.urls')),
-    path('clock/', include('clock.urls')),
-    path('account/', include('users.urls')),
-    path('thoughts/', include('thoughts.urls'))
+    path('', include('todolist.urls', namespace='todolist')),
+    path('clock/', include('clock.urls', namespace='clock')),
+    path('account/', include('users.urls', namespace='users')),
+    path('thoughts/', include('thoughts.urls', namespace='thoughts'))
     
 ]

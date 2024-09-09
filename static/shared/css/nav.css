@@ -10,8 +10,8 @@ body {
 .hamburger-icon {
     position: fixed;
     z-index: 11;
-    top: 5vh;
-    left: 5vw;
+    top: 3vh;
+    left: 3vw;
     font-size: 2em;
     color: black;
     padding-bottom: 2vh;

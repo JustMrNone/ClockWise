@@ -5,14 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Empty!{% endblock title %}</title>
-        <link rel="stylesheet" href="{% static 'todolist/main/css/tailwindstyles.css' %}">
+        <link rel="stylesheet" href="{% static 'shared/css/tailwindstyles.css' %}">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="{% static 'todolist/main/css/nav.css' %}">
+        <link rel="stylesheet" href="{% static 'shared/css/nav.css' %}">
         {% block CSS %}
         {% endblock CSS %}
     </head>
-<body>
-    {% include "todolist/nav.html" %}
+<body class="font-mono">
+    {% include "shared/nav.html" %}
 
     {% block body %}
     {% endblock body %}

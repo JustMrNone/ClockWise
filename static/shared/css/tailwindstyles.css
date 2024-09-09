@@ -525,11 +525,29 @@ video {
 .top-5 {
   top: 1.25rem;
 }
+.bottom-0 {
+  bottom: 0px;
+}
 .z-10 {
   z-index: 10;
 }
 .mt-11 {
   margin-top: 2.75rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mr-3 {
+  margin-right: 0.75rem;
+}
+.mb-20 {
+  margin-bottom: 5rem;
+}
+.mt-12 {
+  margin-top: 3rem;
+}
+.mt-1 {
+  margin-top: 0.25rem;
 }
 .block {
   display: block;
@@ -546,11 +564,31 @@ video {
 .w-\[30vw\] {
   width: 30vw;
 }
+.w-\[17vw\] {
+  width: 17vw;
+}
+.w-full {
+  width: 100%;
+}
 .cursor-pointer {
   cursor: pointer;
 }
+.items-center {
+  align-items: center;
+}
 .justify-center {
   justify-content: center;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.rounded {
+  border-radius: 0.25rem;
 }
 .bg-black {
   --tw-bg-opacity: 1;
@@ -560,11 +598,35 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+}
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-5 {
+  padding: 1.25rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .pt-\[20vh\] {
   padding-top: 20vh;
 }
 .text-center {
   text-align: center;
+}
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -573,6 +635,10 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .text-black {
   --tw-text-opacity: 1;
@@ -592,4 +658,8 @@ video {
 }
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hover\:text-gray-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }

@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="{% static 'shared/css/tailwindstyles.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'shared/css/nav.css' %}">
+</head>
+
+<body class="bg-white">
+    <!-- Hidden Checkbox -->
+    <input type="checkbox" id="openmenu" class="hamburger-checkbox hidden">
+
+    <div class="hamburger-icon fixed z-10 top-5 left-5 text-black text-2xl">
+        <label for="openmenu" id="hamburger-label" class="cursor-pointer">
+            <i class="fas fa-bars"></i> <!-- Font Awesome bars icon -->
+        </label>
+    </div>
+
+    <!-- Sidebar Menu Pane -->
+    <div class="menu-pane fixed top-0 left-[-30vw] bg-black text-white w-[17vw] h-full transition-transform duration-300 ease-in-out">
+        <div class="p-5">
+            <div class="text-white mb-6 mt-12">
+                <input type="text" placeholder="Search" class="w-full p-2 bg-gray-700 text-white rounded">
+            </div>
+
+            <!-- Menu Items -->
+            <ul class="space-y-4">
+                <li class="flex items-center">
+                    <i class="fas fa-sun mr-3"></i>
+                    <a href="{% url 'todolist:today' %}" class="text-white hover:text-gray-400">My Day</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-star mr-3"></i>
+                    <a href="{% url 'todolist:starred' %}" class="text-white hover:text-gray-400">Important</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-calendar-alt mr-3"></i>
+                    <a href="{% url 'todolist:schedule' %}" class="text-white hover:text-gray-400">Planned</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-user mr-3"></i>
+                    <a href="{% url 'todolist:completed' %}" class="text-white hover:text-gray-400">Assigned to me</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-tasks mr-3"></i>
+                    <a href="{% url 'todolist:all' %}" class="text-white hover:text-gray-400">Tasks</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Bottom Icons -->
+        <div class="absolute bottom-0 w-full flex justify-around py-4 text-white">
+            <!-- Clock Icon -->
+            <div class="text-center">
+                <a href="{% url 'clock:clock' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-clock fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Clock</p>
+            </div>
+            
+            <!-- Thoughts Icon -->
+            <div class="text-center">
+                <a href="{% url 'thoughts:thoughts' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-lightbulb fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Thoughts</p>
+            </div>
+            
+            <!-- Profile Icon -->
+            <div class="text-center">
+                <a href="{% url 'users:profile' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-user fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Profile</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional content when menu is open or closed -->
+
+</body>
+
+</html>
