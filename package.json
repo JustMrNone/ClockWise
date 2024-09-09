@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "postcss todolist/static/todolist/main/css/tailwind.css -o todolist/static/todolist/main/css/tailwindstyles.css",
-    "watch": "postcss todolist/static/todolist/main/css/tailwind.css -o todolist/static/todolist/main/css/tailwindstyles.css --watch",
+    "build": "postcss static/shared/css/tailwind.css -o static/shared/css/tailwindstyles.css",
+    "watch": "postcss static/shared/css/tailwind.css -o static/shared/css/tailwindstyles.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
