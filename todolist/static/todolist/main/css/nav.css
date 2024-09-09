@@ -1,75 +1,71 @@
 body {
     background-color: white;
-    margin: 0; /* Ensure no default margin on body */
-    padding: 0; /* Ensure no default padding on body */
+    margin: 0;
+    padding: 0;
     overflow: hidden; /* Prevent scrolling when menu is open */
 }
 
-.menu-container {
-    position: relative;
-    z-index: 10; /* Ensure menu container is above other elements */
-}
+
 
 .hamburger-icon {
-    position: fixed; /* Use fixed to keep the icon in place when scrolling */
-    z-index: 11; /* Ensure it is above the menu pane */
+    position: fixed;
+    z-index: 11;
     top: 5vh;
     left: 5vw;
     font-size: 2em;
     color: black;
     padding-bottom: 2vh;
-    cursor: pointer; /* Change cursor to indicate it's clickable */
-    transition: color 0.3s ease-in-out; /* Smooth color transition */
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
 }
 
 .hamburger-icon i {
     transition: transform 0.5s, color 0.5s;
 }
 
-/* Initially, the hamburger icon is displayed */
+/* Font Awesome icons */
 #openmenu:not(:checked) ~ .hamburger-icon i:before {
     content: "\f0c9"; /* Font Awesome 'bars' icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
 
-/* When the menu is opened, change icon to 'xmark' */
 #openmenu:checked ~ .hamburger-icon i:before {
     content: "\f00d"; /* Font Awesome 'xmark' icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: white; /* Change color to white when opened */
+    color: white;
 }
 
 #openmenu:checked ~ .menu-pane {
-    left: 0; /* Adjust position when menu is open */
+    left: 0; /* Show the menu */
     transform: translateX(0);
 }
 
 #openmenu:checked ~ .body-text {
-    display: none;
+    display: none; /* Hide page content */
 }
 
 .menu-pane {
     background-color: #000;
-    position: fixed; /* Use fixed to ensure it stays in place */
+    position: fixed;
     top: 0;
-    left: -30vw; /* Hide the menu off-screen initially */
+    left: -30vw; /* Hide off-screen initially */
     width: 17vw;
     height: 100vh;
     transition: transform 0.3s ease-in-out;
     padding: 0;
     margin: 0;
-    z-index: 9; /* Ensure it's below the hamburger icon */
+    z-index: 9; /* Below the hamburger icon */
 }
 
 input.hamburger-checkbox {
     position: absolute;
-    z-index: 12; /* Ensure it is above other elements */
+    z-index: 12; /* Above other elements */
     top: 5vh;
     left: 5vw;
-    width: 0; /* Hide the checkbox */
-    height: 0; /* Hide the checkbox */
-    opacity: 0; /* Hide the checkbox */
-    cursor: pointer; /* Change cursor to indicate it's clickable */
+    width: 0;
+    height: 0;
+    opacity: 0;
+    cursor: pointer;
 }
