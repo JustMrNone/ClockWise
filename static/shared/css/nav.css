@@ -5,15 +5,13 @@ body {
     overflow: hidden; /* Prevent scrolling when menu is open */
 }
 
-
-
 .hamburger-icon {
     position: fixed;
     z-index: 11;
     top: 3vh;
     left: 3vw;
     font-size: 2em;
-    color: black;
+    color: black !important; /* Ensure black color */
     padding-bottom: 2vh;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
@@ -23,7 +21,6 @@ body {
     transition: transform 0.5s, color 0.5s;
 }
 
-/* Font Awesome icons */
 #openmenu:not(:checked) ~ .hamburger-icon i:before {
     content: "\f0c9"; /* Font Awesome 'bars' icon */
     font-family: "Font Awesome 5 Free";
@@ -34,16 +31,16 @@ body {
     content: "\f00d"; /* Font Awesome 'xmark' icon */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: white;
+    color: white !important; /* Ensure color changes to white */
 }
 
 #openmenu:checked ~ .menu-pane {
     left: 0; /* Show the menu */
-    transform: translateX(0);
+    transform: translateX(0) !important;
 }
 
 #openmenu:checked ~ .body-text {
-    display: none; /* Hide page content */
+    display: none !important; /* Hide page content */
 }
 
 .menu-pane {
@@ -53,7 +50,7 @@ body {
     left: -30vw; /* Hide off-screen initially */
     width: 17vw;
     height: 100vh;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out !important;
     padding: 0;
     margin: 0;
     z-index: 9; /* Below the hamburger icon */
