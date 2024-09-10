@@ -34,7 +34,7 @@
             <ul class="space-y-4">
                 <li class="flex items-center">
                     <i class="fas fa-sun mr-3"></i>
-                    <a href="{% url 'todolist:today' %}" class="text-white hover:text-gray-400">My Day</a>
+                    <a href="{% url 'todolist:today' %}" class="text-white hover:text-gray-400">Today</a>
                 </li>
                 <li class="flex items-center">
                     <i class="fas fa-star mr-3"></i>
@@ -42,15 +42,19 @@
                 </li>
                 <li class="flex items-center">
                     <i class="fas fa-calendar-alt mr-3"></i>
-                    <a href="{% url 'todolist:schedule' %}" class="text-white hover:text-gray-400">Planned</a>
+                    <a href="{% url 'todolist:schedule' %}" class="text-white hover:text-gray-400">Schedual</a>
                 </li>
                 <li class="flex items-center">
                     <i class="fas fa-user mr-3"></i>
-                    <a href="{% url 'todolist:completed' %}" class="text-white hover:text-gray-400">Assigned to me</a>
+                    <a href="{% url 'todolist:completed' %}" class="text-white hover:text-gray-400">Done</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-user mr-3"></i>
+                    <a href="{% url 'todolist:completed' %}" class="text-white hover:text-gray-400">Overdue</a>
                 </li>
                 <li class="flex items-center">
                     <i class="fas fa-tasks mr-3"></i>
-                    <a href="{% url 'todolist:all' %}" class="text-white hover:text-gray-400">Tasks</a>
+                    <a href="{% url 'todolist:all' %}" class="text-white hover:text-gray-400">All</a>
                 </li>
             </ul>
         </div>
