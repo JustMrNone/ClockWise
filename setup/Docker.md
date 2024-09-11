@@ -1,6 +1,5 @@
-# Dockerizing a Django Project 
+# Dockerizing a Django Project
 
-============================
 Here's the content rewritten in Markdown format, with repeated code parts removed:
 
 This guide covers how to set up a Docker container for your Django project, first using SQLite and then transitioning to PostgreSQL.
