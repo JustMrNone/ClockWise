@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'todolist/main/css/timestyles.css' %}">
+    <title>Time Selection</title>
+</head>
+<body>
+    <div class="list2-body">
+        <div class="list2-view">
+            <h2>Select a Time</h2>
+            <form action="#">
+                <label for="time-picker" class="time-label">Choose Time:</label>
+                <input type="time" id="time-picker" name="time-picker" class="time-input" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

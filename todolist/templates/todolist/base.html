@@ -1,0 +1,18 @@
+{% extends 'shared/layout.html' %}
+{% load static %}
+
+{% block title %}Today{% endblock title %}
+
+{% block CSS %}
+{% endblock CSS %}
+
+{% block body %}
+    <div class="items-container">
+    
+        <!-- Add Task Form -->
+        {% include 'todolist/addtask.html' %}
+
+    </div>
+
+      
+{% endblock body %}

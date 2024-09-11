@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'todolist/main/css/datestyles.css' %}">
+    <title>Interactive Calendar</title>
+</head>
+<body>
+    <div class="list-body">
+        <div class="list-view">
+            <div class="calender">
+                <div class="calender-header">
+                    <div class="prev-month">&#10094;</div>
+                    <div class="current-month">March 2022</div>
+                    <div class="next-month">&#10095;</div>
+                </div>
+
+                <div class="week-days">
+                    <div>Su</div>
+                    <div>Mo</div>
+                    <div>Tu</div>
+                    <div>We</div>
+                    <div>Th</div>
+                    <div>Fr</div>
+                    <div>Sa</div>
+                </div>
+
+                <div class="calender-content">
+                    <!-- Days of the month will be generated dynamically by JS -->
+                    <div class="days"></div>
+
+                    <!-- Today's Date Section -->
+                    <div class="today-section">
+                        <!-- <div class="today-header">Today's Date</div> --> 
+                        
+                        <div class="today-date">September 11, 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add your script at the bottom -->
+    <script src="{% static 'todolist/main/js/date.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addtask</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'todolist/main/css/addtask.css' %}">
+  <style>
+
+  </style>
+</head>
+<body>
+  <div class="task-container">
+
+    <div class="input-container">
+      <input type="text" id="task" placeholder="Add a task">
+      <button id="add-task-btn">+</button>
+    </div>
+    
+    <div class="task-input">
+      <i class="fas fa-clock icon" id="toggle-time"></i>
+      <i class="fas fa-calendar icon" id="toggle-calendar"></i> <!-- Add an ID for targeting -->
+      <i class="fas fa-calendar-alt icon" id="toggle-text"></i>
+    </div>
+    
+
+  </div>
+
+<div class="calendar-container" id="calendar-container">
+    {% include 'todolist/components/expandables/list-date.html' %}
+</div>
+
+<div class="text-container" id="text-container"> <!-- Corrected ID -->
+    {% include 'todolist/components/expandables/list-text.html' %}
+</div>
+
+<div class="time-container" id="time-container">
+  {% include 'todolist/components/expandables/list-time.html' %}
+</div>
+
+
+  <script src="{% static 'todolist/main/js/click.js' %}">
+  </script>
+</body>
+</html>

@@ -1,15 +1,17 @@
-{% extends 'shared/layout.html' %}
-{% load static %}
+{% extends 'todolist/base.html' %}
 
-{% block title %}Today{% endblock title %}
+{% block content %}
 
-{% block CSS %}
-{% endblock CSS %}
-
-{% block body %}
-
-    <div class="flex justify-center mt-11 text-xl">
+    <!-- Header: Today's Tasks -->
+    <div class="header-container">
         <h1>Today's Tasks</h1>
     </div>
+        <div class="list-view">
+              
+        </div>
+        <!-- Task List -->
+        <ul id="task-list">
+            <!-- Tasks will be appended here -->
+        </ul>
 
-{% endblock body %}
+{% endblock content %}

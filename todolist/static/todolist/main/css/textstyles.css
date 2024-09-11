@@ -1,0 +1,53 @@
+.list1-body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;           /* Take the full height of the viewport */
+    background-color: #f0f0f0; /* Optional background for the page */
+}
+
+.list1-view {
+    position: absolute;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50vw;   /* 50% of the viewport width */
+    height: auto;  /* Auto height to accommodate content */
+    max-height: 80vh; /* Prevents it from being too tall */
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff;   /* Optional text color */
+    top: 8.8vw;
+}
+
+.list1-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between the textarea and button */
+}
+
+.list1-textarea {
+    width: 100%; /* Full width of the container */
+    height: 100px; /* Fixed height for the textarea */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: vertical; /* Allow vertical resizing */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.list1-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.list1-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

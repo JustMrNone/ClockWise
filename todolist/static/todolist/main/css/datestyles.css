@@ -1,0 +1,131 @@
+.list-body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top and control spacing with margin */
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.list-view {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90vw; /* Adjust width for smaller screens */
+    max-width: 800px;
+    height: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #f0f0f0;
+    margin-top: 0.1vh; /* Creates 300px space (20% of the viewport height) from the top */
+}
+
+.calender-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.prev-month, .next-month {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.prev-month {
+    margin-right: auto; /* Align to the left */
+}
+
+.next-month {
+    margin-left: auto; /* Align to the right */
+}
+
+.current-month {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 50px; /* Create space between the buttons */
+}
+
+.week-days, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.week-days {
+    background-color: #555;
+}
+
+.days {
+    background-color: #444;
+}
+
+.day {
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.day:hover {
+    background-color: #ffa500;
+}
+
+.today-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.today-date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffa500;
+}
+
+.highlighted {
+    background-color: #ffa500;
+    color: #fff;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.day.empty {
+    background-color: transparent;
+}
+
+@media (max-width: 800px) {
+    .calender-header {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+
+    .prev-month, .next-month {
+        font-size: 1.2rem;
+    }
+
+    .current-month {
+        font-size: 1.2rem;
+        margin: 0 30px; /* Adjust margin for smaller screens */
+    }
+
+    .week-days, .days {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .day {
+        padding: 5px;
+        font-size: 0.8rem;
+    }
+
+    .today-date {
+        font-size: 1.2rem;
+    }
+}

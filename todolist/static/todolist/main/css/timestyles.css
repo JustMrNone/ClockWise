@@ -1,0 +1,64 @@
+/* Center the body and create a card-like view */
+.list2-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+/* Card container styling */
+.list2-view {
+    position: absolute;
+    background-color: #333;
+    padding: 40px;
+    border-radius: 15px;
+    width: 45vw;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #fff;
+    top: 8.8vw;
+}
+
+/* Heading style */
+.list2-view h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/* Time label */
+.time-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Time input field */
+.time-input {
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+/* Submit button styling */
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.submit-btn:hover {
+    background-color: #0056b3;
+}
