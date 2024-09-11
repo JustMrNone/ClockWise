@@ -21,8 +21,8 @@ Ensure your `requirements.txt` includes Django and any other project dependencie
 ### 4\. Build and Run the Container
 
 ```bash
-`docker-compose build
-docker-compose up`
+docker-compose build
+docker-compose up
 ```
 
 Your Django app should now be running inside the Docker container with SQLite as the database.
@@ -53,11 +53,11 @@ Use the same commands as in the SQLite setup. After running the containers, your
 
 To run migrations:
 
-bash
-
-Copy
+```bash
 
 `docker-compose exec web python manage.py migrate`
+
+```
 
 ## Summary
 
