@@ -55,7 +55,7 @@ To run migrations:
 
 ```bash
 
-`docker-compose exec web python manage.py migrate`
+docker-compose exec web python manage.py migrate
 
 ```
 
@@ -120,7 +120,7 @@ This setup ensures that your container uses the dependencies and environment spe
 
 ```bash
 
-`docker build -t my-python-app .`
+docker build -t my-python-app .
 
 ```
 
@@ -128,7 +128,7 @@ This setup ensures that your container uses the dependencies and environment spe
 
 ```bash
 
-`docker run -it my-python-app`
+docker run -it my-python-app
 
 ```
 

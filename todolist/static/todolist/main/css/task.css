@@ -1,0 +1,78 @@
+.list2-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.list2-view {
+    position: absolute;
+    background-color: #424242; /* Dark gray background for the container */
+    color: #e0e0e0; /* Light gray text for readability */
+    padding: 15px;
+    border-radius: 10px;
+    width: 90vw;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    top: 25%;
+
+}
+
+/* Header styling */
+.task-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Icon styling */
+.icon {
+    font-size: 20px;
+}
+
+/* Title and date styling */
+.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Date styling */
+.date {
+    font-size: 14px;
+    color: #b0bec5; /* Light blue-gray color for date */
+}
+
+/* Content styling */
+.task-content {
+    font-size: 14px;
+}
+
+/* Footer styling */
+.task-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Star styling */
+.star {
+    font-size: 20px;
+    color: #ffeb3b; /* Yellow color for star */
+}
+
+/* Priority styling */
+.priority {
+    font-size: 14px;
+    color: #ff8a65; /* Light red color for priority */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .list1-view {
+        width: 95vw;
+    }
+}
