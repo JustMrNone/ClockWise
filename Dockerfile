@@ -4,11 +4,14 @@ FROM python:3.10-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements file into the container
-COPY requirements.txt /app/
+# Copy Pipfile and Pipfile.lock into the container
+COPY Pipfile Pipfile.lock /app/
 
-# Install any required packages
-RUN pip install --no-cache-dir -r requirements.txt
+# Install pipenv
+RUN pip install --no-cache-dir pipenv
+
+# Install dependencies using Pipenv
+RUN pipenv install --deploy --ignore-pipfile
 
 # Copy the current directory contents into the container at /app
 COPY . /app/
@@ -17,4 +20,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Run the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["pipenv", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
