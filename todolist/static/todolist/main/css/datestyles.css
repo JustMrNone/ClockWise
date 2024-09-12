@@ -1,7 +1,7 @@
 .list-body {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Align to the top and control spacing with margin */
+    align-items: flex-end; /* Align to the top and control spacing with margin */
     height: 100vh;
     background-color: #f4f4f9;
 }

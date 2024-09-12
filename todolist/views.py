@@ -23,3 +23,7 @@ class Completed(View):
 class All(View):
     def get(self, request):
         return render(request, "todolist/all.html")
+    
+class Overdue(View):
+    def get(self, request):
+        return render(request, "todolist/overdue.html")

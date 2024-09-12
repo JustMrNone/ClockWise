@@ -15,6 +15,8 @@ body {
     padding-bottom: 2vh;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
+    min-width: 50px; /* Minimum width to avoid shrinking */
+    min-height: 50px; /* Minimum height to avoid shrinking */
 }
 
 .hamburger-icon i {
@@ -39,6 +41,10 @@ body {
     transform: translateX(0) !important;
 }
 
+#openmenu:not(:checked) ~ .menu-pane {
+    transform: translateX(-100%) !important; /* Hide the menu */
+}
+
 #openmenu:checked ~ .body-text {
     display: none !important; /* Hide page content */
 }
@@ -47,13 +53,22 @@ body {
     background-color: #333 !important;
     position: fixed;
     top: 0;
-    left: -30vw; /* Hide off-screen initially */
-    width: 17vw;
-    height: 100vh;
+    left: -100%; /* Hide off-screen initially */
+    width: 25vw !important;
+    height: 100%;
     transition: transform 0.3s ease-in-out !important;
     padding: 0;
     margin: 0;
     z-index: 9; /* Below the hamburger icon */
+    min-width: 250px; /* Minimum width to avoid shrinking */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu-pane {
+        width: 90vw !important; /* Adjust width for smaller screens */
+        left: -90vw; /* Adjust position for smaller screens */
+    }
 }
 
 input.hamburger-checkbox {

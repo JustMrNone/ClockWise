@@ -1,7 +1,5 @@
 .list2-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute; /* Ensure that .list2-view is positioned relative to .list2-body */
     height: 100vh;
 }
 
@@ -18,8 +16,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    top: 25%;
-
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element’s own dimensions */
 }
 
 /* Header styling */
@@ -72,7 +71,10 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .list1-view {
+    .list2-view {
         width: 95vw;
+        /* Adjust vertical centering if needed */
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 }
