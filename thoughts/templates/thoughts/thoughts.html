@@ -6,5 +6,65 @@
 {% endblock CSS %}
 
 {% block body %}
+{% block nav %}
+    <!-- Sidebar Menu Pane -->
+    <div class="menu-pane fixed top-0 left-[-30vw] bg-black text-white w-[17vw] h-full transition-transform duration-300 ease-in-out">
+        <div class="p-5">
+            <div class="text-white mb-6 mt-12">
+                <input type="text" placeholder="Search" class="w-full p-2 bg-gray-700 text-white rounded">
+            </div>
+
+            <!-- Menu Items -->
+            <ul class="space-y-4">
+                <li class="flex items-center">
+                    <i class="fas fa-cloud mr-3"></i>
+                    <a href="{% url 'thoughts:thoughts' %}" class="text-white hover:text-gray-400">Thoughts</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-pen-nib mr-3"></i>
+                    <a href="{% url 'thoughts:write' %}" class="text-white hover:text-gray-400">Write a thought</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-book-open mr-3"></i>
+                    <a href="{% url 'thoughts:library' %}" class="text-white hover:text-gray-400">Library</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-list mr-3"></i>
+                    <a href="{% url 'thoughts:categories' %}" class="text-white hover:text-gray-400">Categories</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-warehouse mr-3"></i>
+                    <a href="{% url 'thoughts:archived' %}" class="text-white hover:text-gray-400">Archived</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Bottom Icons -->
+        <div class="absolute bottom-0 w-full flex justify-around py-4 text-white">
+            <!-- Clock Icon -->
+            <div class="text-center">
+                <a href="{% url 'clock:clock' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-clock fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Clock</p>
+            </div>
+            
+            <!-- Thoughts Icon -->
+            <div class="text-center">
+                <a href="{% url 'thoughts:thoughts' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-clipboard-list fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">TODO</p>
+            </div>
+            
+            <!-- Profile Icon -->
+            <div class="text-center">
+                <a href="{% url 'users:profile' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-user fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Profile</p>
+            </div>
+        </div>
+    </div>
+{% endblock nav %}
 {% endblock body %}
     

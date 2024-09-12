@@ -13,8 +13,81 @@
         {% block CSS %}
         {% endblock CSS %}
     </head>
+
 <body class="font-mono">
-    {% include "shared/nav.html" %}
+
+
+    <input type="checkbox" id="openmenu" class="hamburger-checkbox hidden">
+
+    <div class="hamburger-icon fixed z-10 top-12 left-12 text-black text-2xl">
+        <label for="openmenu" id="hamburger-label" class="cursor-pointer">
+            <i class="fas fa-bars"></i> <!-- Font Awesome bars icon -->
+        </label>
+    </div>
+{% block nav %}
+    <!-- Sidebar Menu Pane -->
+    <div class="menu-pane fixed top-0 left-[-30vw] bg-black text-white w-[17vw] h-full transition-transform duration-300 ease-in-out">
+        <div class="p-5">
+            <div class="text-white mb-6 mt-12">
+                <input type="text" placeholder="Search" class="w-full p-2 bg-gray-700 text-white rounded">
+            </div>
+
+            <!-- Menu Items -->
+            <ul class="space-y-4">
+                <li class="flex items-center">
+                    <i class="fas fa-sun mr-3"></i>
+                    <a href="{% url 'todolist:today' %}" class="text-white hover:text-gray-400">Today</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-star mr-3"></i>
+                    <a href="{% url 'todolist:starred' %}" class="text-white hover:text-gray-400">Important</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-calendar-alt mr-3"></i>
+                    <a href="{% url 'todolist:schedule' %}" class="text-white hover:text-gray-400">Schedual</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-user mr-3"></i>
+                    <a href="{% url 'todolist:completed' %}" class="text-white hover:text-gray-400">Done</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-user mr-3"></i>
+                    <a href="{% url 'todolist:overdue' %}" class="text-white hover:text-gray-400">Overdue</a>
+                </li>
+                <li class="flex items-center">
+                    <i class="fas fa-tasks mr-3"></i>
+                    <a href="{% url 'todolist:all' %}" class="text-white hover:text-gray-400">All</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Bottom Icons -->
+        <div class="absolute bottom-0 w-full flex justify-around py-4 text-white">
+            <!-- Clock Icon -->
+            <div class="text-center">
+                <a href="{% url 'clock:clock' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-clock fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Clock</p>
+            </div>
+            
+            <!-- Thoughts Icon -->
+            <div class="text-center">
+                <a href="{% url 'thoughts:thoughts' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-lightbulb fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Thoughts</p>
+            </div>
+            
+            <!-- Profile Icon -->
+            <div class="text-center">
+                <a href="{% url 'users:profile' %}" class="text-white hover:text-gray-400">
+                    <i class="fas fa-user fa-2x"></i>
+                </a>
+                <p class="text-sm mt-1">Profile</p>
+            </div>
+        </div>
+    </div>
+{% endblock nav %}
 
 
 

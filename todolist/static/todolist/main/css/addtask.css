@@ -74,9 +74,10 @@ body {
 .header-container {
     position: absolute;
     color: black;
-    top: 20%; /* Use percentage for responsive positioning */
+    top: 18%; /* Use percentage for responsive positioning */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for horizontal centering */
+    margin-top: 10px;
 }
 @media (max-width: 1024px) {
     .header-container {
