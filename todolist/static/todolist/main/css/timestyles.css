@@ -1,28 +1,30 @@
 /* Center the body and create a card-like view */
-.list2-body {
+.list3-body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     background-color: #f0f0f0;
 }
 
 /* Card container styling */
-.list2-view {
+.list3-view {
     position: absolute;
     background-color: #333;
     padding: 40px;
     border-radius: 15px;
-    width: 45vw;
+    width: 90vw; /* Adjust width for smaller screens */
     max-width: 800px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: #fff;
     top: 8.8vw;
+    z-index: 9999;
+    opacity: 1; /* Ensure no delay in visibility */
+    transition: none; /* Remove any transition that might cause a delay */
 }
 
 /* Heading style */
-.list2-view h2 {
+.list3-view h2 {
     margin-bottom: 20px;
     font-size: 1.5rem;
     color: #fff;

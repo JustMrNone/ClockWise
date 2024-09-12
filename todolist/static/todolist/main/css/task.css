@@ -18,7 +18,8 @@
     gap: 8px;
     top: 30vh; /* Center vertically */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for the element’s own dimensions */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure this is always below .list3-view */
 }
 
 /* Header styling */
@@ -70,7 +71,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .list2-view {
         width: 95vw;
         /* Adjust vertical centering if needed */
