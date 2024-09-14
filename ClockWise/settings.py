@@ -145,3 +145,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Folder where collected st
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Django uses /accounts/login/ for login by default. 
+#If you want to use a different path, like /account/login/ instead of /accounts/login/, you need to adjust the LOGIN_URL like this
+LOGIN_URL = '/account/login/'

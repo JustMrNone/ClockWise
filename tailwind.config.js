@@ -5,6 +5,8 @@ module.exports = {
 
     // Todolist templates
     './todolist/templates/todolist/*.html',
+
+    './users/templates/users/*.html'
   ],
   theme: {
     extend: {},
