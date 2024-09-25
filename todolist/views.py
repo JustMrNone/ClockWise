@@ -8,6 +8,11 @@ class Today(View):
     def get(self, request):
         tasks = Tasks.objects.filter(due_date__isnull=False).order_by('due_date')
         return render(request, "todolist/today.html", {'tasks': tasks}) 
+from django.views import View
+from django.shortcuts import render, redirect
+from django.utils import timezone
+from .models import Tasks
+
 class CreateTask(View):
     def get(self, request):
         # Render the form template
@@ -27,11 +32,16 @@ class CreateTask(View):
         category = request.POST.get('category')
         recurrence = request.POST.get('recurrence')
 
+        # Convert due_date from string to a date object
+        due_date_obj = None
+        if due_date:
+            due_date_obj = timezone.datetime.strptime(due_date, '%B %d, %Y').date()  # Adjust format if needed
+
         # Create a new instance of the model manually
         task = Tasks.objects.create(
             title=title,
             description=description,
-            due_date=due_date,
+            due_date=due_date_obj,  # Save the date object
             due_time=due_time,
             starred=starred,
             priority=priority,
@@ -43,8 +53,8 @@ class CreateTask(View):
         )
 
         # After saving, redirect to some other view (e.g., task list)
-        return redirect('task_list') 
-    
+        return redirect('task_list')
+
 class Starred(View):
     def get(self, request):
         return render(request, "todolist/starred.html")

@@ -1,7 +1,7 @@
 const daysContainer = document.querySelector('.days');
 const currentMonthEl = document.querySelector('.current-month');
 const todayDateEl = document.querySelector('.today-date');
-const dueDateInput = document.getElementById('due_date'); // New input field
+const dueDateInput = document.getElementById('due_date'); // Hidden input field for due date
 const prevMonthBtn = document.querySelector('.prev-month');
 const nextMonthBtn = document.querySelector('.next-month');
 const weekDaysEl = document.querySelectorAll('.week-days div');
@@ -9,6 +9,7 @@ const weekDaysEl = document.querySelectorAll('.week-days div');
 let currentDate = new Date();
 let selectedDate = new Date();
 
+// Function to initialize and update the calendar
 function updateCalendar() {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
@@ -60,6 +61,14 @@ function updateCalendar() {
     highlightSelectedWeekday();
 }
 
+// Reset the calendar to the current date and show it
+function openCalendar() {
+    currentDate = new Date(); // Reset to current date
+    updateCalendar();
+    updateSelectedDate();
+}
+
+// Function to update the selected date and the hidden input
 function updateSelectedDate() {
     // Update the "Today's Date" section with the selected date
     todayDateEl.textContent = selectedDate.toLocaleDateString('en-US', {
@@ -68,12 +77,8 @@ function updateSelectedDate() {
         year: 'numeric',
     });
     
-    // Update the due date input with the selected date
-    dueDateInput.value = selectedDate.toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-    });
+    // Update the due date input with the selected date in YYYY-MM-DD format
+    dueDateInput.value = selectedDate.toISOString().split('T')[0]; // Format as YYYY-MM-DD
 }
 
 function highlightSelectedWeekday() {
@@ -98,6 +103,9 @@ nextMonthBtn.addEventListener('click', () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
     updateCalendar();
 });
+
+// Event listener to open the calendar
+document.getElementById('toggle-calendar').addEventListener('click', openCalendar);
 
 // Initialize the calendar with the current date
 updateCalendar();

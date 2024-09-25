@@ -2,8 +2,7 @@
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center;     /* Center vertically */
-    height: 100vh;           /* Take the full height of the viewport */
-    background-color: #f0f0f0; /* Optional background for the page */
+    height: 100vh;           /* Take the full height of the viewport */ /* Optional background for the page */
 }
 
 .list1-view {
