@@ -8,28 +8,42 @@ class Today(View):
     def get(self, request):
         tasks = Tasks.objects.filter(due_date__isnull=False).order_by('due_date')
         return render(request, "todolist/today.html", {'tasks': tasks}) 
-
 class CreateTask(View):
     def get(self, request):
-        return render(request, 'todolist/addtask.html')  # Render the task creation form
+        # Render the form template
+        return render(request, 'todolist/addtask.html')
 
     def post(self, request):
+        # Manually retrieve form fields from request.POST
         title = request.POST.get('title')
-        description = request.POST.get('description', '')
-        due_date = request.POST.get('due_date', None)  # Handle this if you have a date field
-        due_time = request.POST.get('due_time', None)  # Handle this if you have a time field
+        description = request.POST.get('description')
+        due_date = request.POST.get('due_date')
+        due_time = request.POST.get('due_time')
+        starred = request.POST.get('starred') == 'on'  # Checkbox returns 'on' when checked
+        priority = request.POST.get('priority')
+        notes = request.POST.get('notes')
+        completed = request.POST.get('completed') == 'on'
+        overdue = request.POST.get('overdue') == 'on'
+        category = request.POST.get('category')
+        recurrence = request.POST.get('recurrence')
 
-        # Create the task instance
-        task = Tasks(
+        # Create a new instance of the model manually
+        task = Tasks.objects.create(
             title=title,
             description=description,
-            due_date=due_date if due_date else None,
-            due_time=due_time if due_time else None,
+            due_date=due_date,
+            due_time=due_time,
+            starred=starred,
+            priority=priority,
+            notes=notes,
+            completed=completed,
+            overdue=overdue,
+            category=category,
+            recurrence=recurrence,
         )
-        task.save()
 
-        return redirect('todolist:today')  # Redirect to the today view after saving
-    
+        # After saving, redirect to some other view (e.g., task list)
+        return redirect('task_list') 
     
 class Starred(View):
     def get(self, request):
