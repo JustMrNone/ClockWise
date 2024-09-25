@@ -1,9 +1,10 @@
 const daysContainer = document.querySelector('.days');
 const currentMonthEl = document.querySelector('.current-month');
 const todayDateEl = document.querySelector('.today-date');
+const dueDateInput = document.getElementById('due_date'); // New input field
 const prevMonthBtn = document.querySelector('.prev-month');
 const nextMonthBtn = document.querySelector('.next-month');
-const weekDaysEl = document.querySelectorAll('.week-days div'); // Weekdays (Su, Mo, Tu, ...)
+const weekDaysEl = document.querySelectorAll('.week-days div');
 
 let currentDate = new Date();
 let selectedDate = new Date();
@@ -62,6 +63,13 @@ function updateCalendar() {
 function updateSelectedDate() {
     // Update the "Today's Date" section with the selected date
     todayDateEl.textContent = selectedDate.toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
+    
+    // Update the due date input with the selected date
+    dueDateInput.value = selectedDate.toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
         year: 'numeric',

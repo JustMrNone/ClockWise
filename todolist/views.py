@@ -10,11 +10,14 @@ class Today(View):
         return render(request, "todolist/today.html", {'tasks': tasks}) 
 
 class CreateTask(View):
+    def get(self, request):
+        return render(request, 'todolist/addtask.html')  # Render the task creation form
+
     def post(self, request):
         title = request.POST.get('title')
         description = request.POST.get('description', '')
-        due_date = request.POST.get('due_date', None)
-        due_time = request.POST.get('due_time', None)
+        due_date = request.POST.get('due_date', None)  # Handle this if you have a date field
+        due_time = request.POST.get('due_time', None)  # Handle this if you have a time field
 
         # Create the task instance
         task = Tasks(
@@ -25,7 +28,9 @@ class CreateTask(View):
         )
         task.save()
 
-        return redirect('today')  # Redirect to the today view after saving    
+        return redirect('todolist:today')  # Redirect to the today view after saving
+    
+    
 class Starred(View):
     def get(self, request):
         return render(request, "todolist/starred.html")
