@@ -1,12 +1,31 @@
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import TemplateView
+from .models import Tasks
 
 # Create your views here.\
 class Today(View):
     def get(self, request):
-        return render(request, "todolist/today.html")
-    
+        tasks = Tasks.objects.filter(due_date__isnull=False).order_by('due_date')
+        return render(request, "todolist/today.html", {'tasks': tasks}) 
+
+class CreateTask(View):
+    def post(self, request):
+        title = request.POST.get('title')
+        description = request.POST.get('description', '')
+        due_date = request.POST.get('due_date', None)
+        due_time = request.POST.get('due_time', None)
+
+        # Create the task instance
+        task = Tasks(
+            title=title,
+            description=description,
+            due_date=due_date if due_date else None,
+            due_time=due_time if due_time else None,
+        )
+        task.save()
+
+        return redirect('today')  # Redirect to the today view after saving    
 class Starred(View):
     def get(self, request):
         return render(request, "todolist/starred.html")

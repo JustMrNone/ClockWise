@@ -4,7 +4,7 @@ from django.views import View
 # Create your views here.
 class Thoughts(View):
     def get(self, request):
-        return render(request, 'thoughts/thoughts.html')
+        return render(request, 'thoughts/dashboard.html')
     
 class Write(View):
     def get(self, request):
