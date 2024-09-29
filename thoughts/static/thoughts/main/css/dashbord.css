@@ -1,0 +1,24 @@
+.search-container {
+    display: flex; /* Use flexbox to center the input group */
+    justify-content: center; /* Center the content horizontally */
+    position: relative; /* Positioning context for fixed positioning */
+    width: 100%; /* Full width of the parent */
+  }
+  
+  .input-group {
+    max-width: 300px; /* Maximum width for the input group */
+    width: 100%; /* Full width up to the max-width */
+    position: absolute; /* Absolute positioning to prevent affecting layout */
+    left: 50%; /* Move the element to the center */
+    transform: translateX(-50%); /* Adjust the element to truly center it */
+  }
+  
+  .form-control {
+    border-radius: 0.5rem; /* Rounded corners for the input */
+    padding: 0.5rem; /* Padding inside the input */
+    font-size: 1rem; /* Font size */
+  }
+  
+  .btn-outline-secondary {
+    border-radius: 0.5rem; /* Match the input's border-radius */
+  }

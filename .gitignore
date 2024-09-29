@@ -3,11 +3,11 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
+*.cpython-*.pyc  # Ignore compiled Python files specific to Python versions
 
 # Django specific files
 *.log
 *.pot
-*.pyc
 *.sqlite3
 db.sqlite3
 
@@ -34,3 +34,8 @@ settings_local.py
 
 # MacOS specific files
 .DS_Store
+
+# Additional Python cache files
+*.egg-info/
+dist/
+build/
