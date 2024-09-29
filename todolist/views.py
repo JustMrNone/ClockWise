@@ -1,17 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.views.generic import TemplateView
 from .models import Tasks
 from django.utils import timezone
 import json
+from django.http import HttpResponseNotFound
 
 
+# Create your views here.
 
-
-
-
-
-# Create your views here.\
 class Today(View):
     def get(self, request):
         tasks = Tasks.objects.filter(due_date__isnull=False).order_by('due_date')
@@ -19,7 +16,7 @@ class Today(View):
         # Calculate top positions for each task
         tasks_with_positions = []
         for index, task in enumerate(tasks):
-            position = index * 220  # Adjust this value as needed
+            position = index * 160  # Adjust this value as needed
             tasks_with_positions.append({
                 'task': task,
                 'position': position,
@@ -78,7 +75,16 @@ class CreateTask(View):
 
         # Redirect to today's task list
         return redirect('todolist:today')
-
+class DeleteTask(View):
+    def post(self, request, title):
+        try:
+            task_title = title.replace('-', ' ')  # Restore spaces in the title
+            task = Tasks.objects.get(title=task_title)
+            task.delete()
+            return redirect('todolist:today')
+        except Tasks.DoesNotExist:
+            # Handle the case where the task does not exist
+            return redirect('todolist:today')
 class Starred(View):
     def get(self, request):
         return render(request, "todolist/starred.html")

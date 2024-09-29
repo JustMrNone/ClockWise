@@ -10,7 +10,7 @@
 <body>
     <div class="list2-body">
         {% for item in tasks %}
-            <div class="list2-view" style="top: {{ item.position }}px;">  <!-- Use calculated position -->
+            <div class="list2-view" style="top: {{ item.position }}px;">
                 <div class="task-header">
                     <span class="icon">📝</span>
                     <span class="title">Task: {{ item.task.title }}</span>
@@ -21,8 +21,14 @@
                 </div>
                 <div class="task-footer">
                     {% if item.task.starred %}
-                    <span class="star">⭐</span>
+                        <span class="star">⭐</span>
                     {% endif %}
+                    <form action="{% url 'todolist:delete_task' item.task.title|slugify %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-button">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </form>
                     <span class="priority">Priority: {{ item.task.priority|title }}</span>
                 </div>
             </div>
