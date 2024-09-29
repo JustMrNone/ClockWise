@@ -14,7 +14,7 @@ class Tasks(models.Model):
     due_date = models.DateField(blank=True, null=True)
     due_time = models.TimeField(blank=True, null=True)
     starred = models.BooleanField(default=False)
-    priority = models.CharField(max_length=10, choices=PRIORITY, default="medium")
+    priority = models.CharField(max_length=10, choices=PRIORITY, default="medium", null=True)
     notes = models.TextField(blank=True, null=True)
     completed = models.BooleanField(default=False)
     overdue = models.BooleanField(default=False)
