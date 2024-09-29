@@ -1,6 +1,5 @@
 body{
     overflow-y: auto; /* Enable vertical scrolling */
-    z-index: 0;
     position: relative;
 }
 .MoNo{
