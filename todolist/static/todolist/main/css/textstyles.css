@@ -18,6 +18,7 @@
     text-align: center;
     color: #fff;   /* Optional text color */
     top: 8.8vw;
+    z-index: 1000;   
 }
 
 .list1-form {

@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: flex-end; /* Align to the top and control spacing with margin */
     background-color: #f4f4f9;
-    z-index: 999;
 }
 
 .list-view {
@@ -16,7 +15,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: #f0f0f0;
-    z-index: 9999;
+    z-index: 1;
     margin-top: 0.1vh !important; /* Creates 300px space (20% of the viewport height) from the top */
    
 }

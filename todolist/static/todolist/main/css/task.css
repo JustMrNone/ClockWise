@@ -1,6 +1,7 @@
 .list2-body {
     position: absolute; /* Ensure that .list2-view is positioned relative to .list2-body */
     height: 100vh;
+    z-index: -1;
 }
 
 .list2-view {
@@ -19,10 +20,8 @@
     top: 30vh; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%);
-    z-index: -1; /* Ensure this is always below .list3-view */
     margin-top: 30vh;
 }
-
 /* Header styling */
 .task-header {
     display: flex;
