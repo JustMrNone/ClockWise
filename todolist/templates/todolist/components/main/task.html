@@ -5,27 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'todolist/main/css/task.css' %}">
+    <title>Today's Tasks</title>
 </head>
 <body>
     <div class="list2-body">
-        <div class="list2-view">
-            <div class="task-header">
-                <span class="icon">📝</span>
-                <span class="title">Task: {{ task.title }}</span>
-                <span class="date">Due: {{ task.due_date }}</span>
+        {% for item in tasks %}
+            <div class="list2-view" style="top: {{ item.position }}px;">  <!-- Use calculated position -->
+                <div class="task-header">
+                    <span class="icon">📝</span>
+                    <span class="title">Task: {{ item.task.title }}</span>
+                    <span class="date">Due: {{ item.task.due_date }}</span>
+                </div>
+                <div class="task-content">
+                    <span class="subtitle">{{ item.task.description }}</span>
+                </div>
+                <div class="task-footer">
+                    {% if item.task.starred %}
+                    <span class="star">⭐</span>
+                    {% endif %}
+                    <span class="priority">Priority: {{ item.task.priority|title }}</span>
+                </div>
             </div>
-            <div class="task-content">
-                <span class="subtitle">{{ task.description }}</span>
-            </div>
-            <div class="task-footer">
-                {% if task.starred %}
-                <span class="star">⭐</span>
-                {% endif %}
-                <span class="priority">Priority: {{ task.priority|title }}</span>
-            </div>
-        </div>
-
+        {% endfor %}
     </div>
-    <h1></h1>
 </body>
 </html>

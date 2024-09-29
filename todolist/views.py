@@ -4,8 +4,10 @@ from django.views.generic import TemplateView
 from .models import Tasks
 from django.utils import timezone
 import json
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
+
+
+
+
 
 
 
@@ -13,11 +15,17 @@ from django.views.decorators.csrf import csrf_exempt
 class Today(View):
     def get(self, request):
         tasks = Tasks.objects.filter(due_date__isnull=False).order_by('due_date')
-        return render(request, "todolist/today.html", {'tasks': tasks}) 
-from django.views import View
-from django.shortcuts import render, redirect
-from django.utils import timezone
-from .models import Tasks
+        
+        # Calculate top positions for each task
+        tasks_with_positions = []
+        for index, task in enumerate(tasks):
+            position = index * 220  # Adjust this value as needed
+            tasks_with_positions.append({
+                'task': task,
+                'position': position,
+            })
+
+        return render(request, "todolist/today.html", {'tasks': tasks_with_positions})
 
 class CreateTask(View):
     def get(self, request):

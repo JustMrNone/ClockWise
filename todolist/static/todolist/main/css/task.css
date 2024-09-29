@@ -20,6 +20,7 @@
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%);
     z-index: -1; /* Ensure this is always below .list3-view */
+    margin-top: 30vh;
 }
 
 /* Header styling */
