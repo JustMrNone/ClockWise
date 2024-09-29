@@ -31,6 +31,7 @@ body {
 }
 .items-container {
     text-align: center !important;
+    max-height: 20vh;
 }
 
 .input-container {
