@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="{% static 'todolist/main/css/textstyles.css' %}">
 </head>
 <body>
-    <div class="list1-body">
+    <div id="notes-container" class="list1-body">
         <div class="list1-view">
             <form class="list1-form" id="text-form">
                 <textarea class="list1-textarea" id="notes-textarea" name="description" placeholder="Enter your text here..." required></textarea>
-                <button type="button" class="list1-button" id="submit-notes">Save Notes</button> <!-- Use AJAX to save notes -->
+                <button type="button" class="list1-button" id="submit-notes">Save Notes</button>
             </form>
         </div>
     </div>
 
     <!-- Include the text-specific JavaScript file -->
     <script src="{% static 'todolist/main/js/text.js' %}"></script>
+
 </body>
 </html>

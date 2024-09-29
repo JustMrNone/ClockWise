@@ -3,50 +3,69 @@ document.addEventListener('DOMContentLoaded', function() {
     const calendarIcon = document.getElementById('toggle-calendar');
     const textIcon = document.getElementById('toggle-text');
     const timeIcon = document.getElementById('toggle-time');
+    const submitButton = document.getElementById('submit-notes');
+    const notesContainer = document.getElementById('notes-container');
 
     // Get the containers
     const calendarContainer = document.getElementById('calendar-container');
     const textContainer = document.getElementById('text-container');
     const timeContainer = document.getElementById('time-container');
+
     // Function to hide all containers
     function hideAllContainers() {
         calendarContainer.classList.remove('calendar-visible');
         textContainer.classList.remove('text-visible');
-        timeContainer.classList.remove('time-visible')
+        timeContainer.classList.remove('time-visible');
     }
 
     // Add a click event listener to the calendar icon
     calendarIcon.addEventListener('click', function() {
         if (calendarContainer.classList.contains('calendar-visible')) {
-            // If the calendar is already visible, just hide it
             calendarContainer.classList.remove('calendar-visible');
         } else {
-            // Hide all containers and then show the calendar
             hideAllContainers();
             calendarContainer.classList.add('calendar-visible');
         }
     });
 
-    // Add a click event listener to the text icon
+    // Add a click event listener to the text icon (toggle notesContainer)
     textIcon.addEventListener('click', function() {
+        if (notesContainer.style.display === 'block') {
+            // If notesContainer is visible, hide it
+            notesContainer.style.display = 'none';
+        } else {
+            // If notesContainer is hidden, show it
+            notesContainer.style.display = 'block';
+            // Hide all other containers
+            hideAllContainers();
+        }
+
+        // Manage text container visibility
         if (textContainer.classList.contains('text-visible')) {
-            // If the text is already visible, just hide it
             textContainer.classList.remove('text-visible');
         } else {
-            // Hide all containers and then show the text container
             hideAllContainers();
             textContainer.classList.add('text-visible');
         }
     });
 
+    // Add a click event listener to the time icon (toggle timeContainer)
     timeIcon.addEventListener('click', function() {
         if (timeContainer.classList.contains('time-visible')) {
-            // If the time is already visible, just hide it
+            // If timeContainer is visible, hide it
             timeContainer.classList.remove('time-visible');
         } else {
-            // Hide all containers and then show the time container
-            hideAllContainers();
+            // If timeContainer is hidden, show it
+            hideAllContainers(); // Hide all other containers
             timeContainer.classList.add('time-visible');
         }
+    });
+
+    // Add a click event listener to the submit button
+    submitButton.addEventListener('click', function() {
+        // Your existing AJAX code to save notes would go here
+
+        // Hide the notes container after saving
+        notesContainer.style.display = 'none';
     });
 });
